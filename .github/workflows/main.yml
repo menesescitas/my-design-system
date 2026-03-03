@@ -1,0 +1,22 @@
+name: Transform Tokens
+on: [push] # Se activa cada vez que haces Push desde Figma
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install Style Dictionary
+        run: npm install style-dictionary
+      - name: Build Tokens
+        run: npx style-dictionary build --config config.json
+      - name: Commit Files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add build/
+          git commit -m "style: update generated tokens" || exit 0
+          git push
