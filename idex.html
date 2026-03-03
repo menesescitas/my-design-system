@@ -2,47 +2,39 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDS - Sistema de Diseño</title>
+    <title>Visualizador de Tokens - PDS</title>
     <link rel="stylesheet" href="./build/css/variables.css">
     <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            /* Usamos tu color de fondo Indigo 50 */
-            background-color: var(--global-pds-color-primary-indigo-50);
+        body { 
+            font-family: sans-serif; 
+            background-color: var(--global-pds-color-primary-gray-50); 
+            padding: 40px;
         }
         .card {
-            /* Usamos tu Purple 500 para el fondo */
-            background-color: var(--global-pds-color-primary-purple-500);
-            color: white;
-            padding: 2rem;
+            background-color: white;
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            text-align: center;
+            border-top: 8px solid var(--global-pds-color-primary-purple-500);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .status-badge {
-            margin-top: 1rem;
+        h1 { color: var(--global-pds-color-primary-purple-900); }
+        .swatch {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            /* Usamos tu color de Success */
-            background-color: var(--global-pds-color-success-500);
-            color: #1F0D3F;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin: 10px;
+            /* Usamos tu Indigo 500 */
+            background-color: var(--global-pds-color-primary-indigo-500);
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>¡Hola desde Figma! 🚀</h1>
-        <p>Este componente usa mis Design Tokens automatizados.</p>
-        <div class="status-badge">Conexión Exitosa</div>
+        <h1>¡Mis Tokens están vivos! 🚀</h1>
+        <p>Este color púrpura de arriba y este cuadro vienen de Figma.</p>
+        <div class="swatch"></div>
+        <p>Variable usada: <code>--global-pds-color-primary-purple-500</code></p>
     </div>
 </body>
 </html>
